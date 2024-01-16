@@ -52,10 +52,14 @@ const puppeteerScraper = async () => {
     await page.waitForSelector('label.radio');
     const elements = await page.$$('label.radio');
 
+    const tripData: string[] = [];
+
     for (const element of elements) {
         const text = await element.$eval('span', el => el.textContent);
-        console.log("Element:", text);
+        tripData.push(text);
     }
+
+    console.log(tripData);
 
     await browser.close();
 } 
