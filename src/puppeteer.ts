@@ -3,7 +3,7 @@ import puppeteer from 'puppeteer'
  /**
   * Scrapes the c2cbus.ipp.cornell.edu website to select travel options and print out possible tickets for the next day.
   */
-const scrapingTest = async () => {
+const puppeteerScraper = async () => {
     const browser = await puppeteer.launch({ headless: "new" });
     // const browser = await puppeteer.launch({ headless: false });
     
@@ -61,6 +61,6 @@ const scrapingTest = async () => {
 } 
 
 var startTime = performance.now();
-await scrapingTest();
+await puppeteerScraper();
 var endTime = performance.now();
 console.log("Time elapsed: " + (endTime - startTime) + "ms");

@@ -1,6 +1,6 @@
 import {Builder, By} from 'selenium-webdriver';
 
-const scrapingTest = async () => {
+const seleniumScraper = async () => {
     var driver = await new Builder()
         .forBrowser('chrome')
         .build();
@@ -54,6 +54,6 @@ const scrapingTest = async () => {
 }
 
 var startTime = performance.now();
-await scrapingTest();
+await seleniumScraper();
 var endTime = performance.now();
 console.log("Time elapsed: " + (endTime - startTime) + "ms");
